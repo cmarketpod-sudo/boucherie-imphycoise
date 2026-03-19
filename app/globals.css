@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Brand colors */
+  --color-brand: #A0382B;
+  --color-brand-light: #C0453A;
+  --color-brand-dark: #7A2A20;
+  --color-cream: #FAF5EF;
+  --color-gold: #C8A96E;
+  --color-facebook: #1877F2;
+  --color-google: #4285F4;
+
+  /* Backgrounds */
+  --color-bg-dark: #0F0F0F;
+  --color-bg-card: #1A1A1A;
+  --color-bg-light: #FAF8F5;
+  --color-bg-footer: #0A0A0A;
+
+  /* Text */
+  --color-text-primary: #FAF5EF;
+  --color-text-dark: #1A1A1A;
+  --color-text-muted: #8A8A8A;
+
+  /* Borders */
+  --color-border-dark: #2A2A2A;
+  --color-border-light: #E8E0D8;
+
+  /* Fonts */
+  --font-display: var(--font-playfair);
+  --font-body: var(--font-dm-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg-dark);
+  color: var(--color-text-primary);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--color-brand);
+  color: white;
+}
