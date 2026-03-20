@@ -1,12 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { UtensilsCrossed, ArrowRight } from "lucide-react";
 import { contact } from "@/lib/content";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import ContactPopup from "@/components/ContactPopup";
 
 export default function ContactDevis() {
   const reducedMotion = useReducedMotion();
+  const [popupOpen, setPopupOpen] = useState(false);
 
   return (
     <section className="px-4 sm:px-6 lg:px-8 pb-20 md:pb-28 max-w-7xl mx-auto">
@@ -28,8 +31,8 @@ export default function ContactDevis() {
           </h3>
           <p className="text-text-muted">{contact.devis.body}</p>
         </div>
-        <motion.a
-          href={contact.devis.ctaUrl}
+        <motion.button
+          onClick={() => setPopupOpen(true)}
           animate={
             reducedMotion
               ? undefined
@@ -40,12 +43,14 @@ export default function ContactDevis() {
               ? undefined
               : { duration: 2, repeat: Infinity, ease: "easeInOut" }
           }
-          className="inline-flex items-center gap-2 bg-brand hover:bg-brand-light text-white rounded-full px-8 py-3.5 font-medium transition-colors duration-300 whitespace-nowrap"
+          className="inline-flex items-center gap-2 bg-brand hover:bg-brand-light text-white rounded-full px-8 py-3.5 font-medium transition-colors duration-300 whitespace-nowrap cursor-pointer"
         >
           {contact.devis.ctaLabel}
           <ArrowRight size={18} />
-        </motion.a>
+        </motion.button>
       </motion.div>
+
+      <ContactPopup open={popupOpen} onClose={() => setPopupOpen(false)} />
     </section>
   );
 }
