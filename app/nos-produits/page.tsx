@@ -19,6 +19,8 @@ export default function NosProduitsPage() {
       <PageHero
         overline={products.hero.overline}
         headline={products.hero.headline}
+        imageSrc="/images/hero-produits.webp"
+        imageAlt="Vitrine de produits — brochettes, saucisses et viandes marinées"
       />
       <ProductsGrid />
       <ProductsQuality />

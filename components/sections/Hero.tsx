@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import { hero } from "@/lib/content";
 import TextReveal from "@/components/ui/TextReveal";
@@ -23,12 +24,21 @@ export default function Hero() {
       ref={ref}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background with parallax */}
+      {/* Background image with parallax */}
       <motion.div
         style={reducedMotion ? undefined : { y: bgY }}
-        className="absolute inset-0 bg-[url('/images/logo.jpg')] bg-cover bg-center scale-110"
-      />
-      <div className="absolute inset-0 bg-bg-dark/70" />
+        className="absolute inset-0 scale-110"
+      >
+        <Image
+          src="/images/hero-accueil.webp"
+          alt="Devanture Boucherie Charcuterie Imphycoise"
+          fill
+          style={{ objectFit: "cover" }}
+          unoptimized
+          priority
+        />
+      </motion.div>
+      <div className="absolute inset-0 bg-black/60" />
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl">

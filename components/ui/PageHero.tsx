@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import TextReveal from "./TextReveal";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { cn } from "@/lib/utils";
@@ -9,6 +10,7 @@ interface PageHeroProps {
   overline: string;
   headline: string;
   imageSrc?: string;
+  imageAlt?: string;
   className?: string;
 }
 
@@ -16,6 +18,7 @@ export default function PageHero({
   overline,
   headline,
   imageSrc,
+  imageAlt = "",
   className,
 }: PageHeroProps) {
   const reducedMotion = useReducedMotion();
@@ -28,12 +31,16 @@ export default function PageHero({
       )}
     >
       {imageSrc && (
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${imageSrc})` }}
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          fill
+          style={{ objectFit: "cover" }}
+          unoptimized
+          priority
         />
       )}
-      <div className="absolute inset-0 bg-bg-dark/80" />
+      <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 text-center px-6 py-20">
         <motion.p
           initial={reducedMotion ? undefined : { opacity: 0, y: 10 }}

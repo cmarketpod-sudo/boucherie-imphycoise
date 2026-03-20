@@ -17,6 +17,8 @@ export default function ContactPage() {
       <PageHero
         overline={contact.hero.overline}
         headline={contact.hero.headline}
+        imageSrc="/images/hero-contact.jpg"
+        imageAlt="Découpe artisanale de viande"
       />
       <ContactInfo />
       <ContactDevis />
