@@ -18,6 +18,8 @@ export default function QuiSommesNousPage() {
       <PageHero
         overline={about.hero.overline}
         headline={about.hero.headline}
+        imageSrc="/images/hero-about.jpg"
+        imageAlt="Henrique Chagas, boucher artisan à Imphy"
       />
       <AboutContent />
       <AboutQuote />
