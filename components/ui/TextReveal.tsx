@@ -27,7 +27,7 @@ export default function TextReveal({
 
   const items =
     mode === "word"
-      ? text.split(" ").map((w) => w + " ")
+      ? text.split(" ")
       : text.split(/(?<=\. )/).filter(Boolean);
 
   const containerVariants = {
@@ -57,7 +57,7 @@ export default function TextReveal({
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "-80px" }}
-      className={cn("flex flex-wrap", className)}
+      className={cn("flex flex-wrap", mode === "word" ? "gap-x-2" : "", className)}
       role="presentation"
     >
       {items.map((item, i) => (
