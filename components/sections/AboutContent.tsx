@@ -58,6 +58,7 @@ export default function AboutContent() {
               alt="Henrique Chagas — Boucher artisan"
               fill
               className="object-cover"
+              unoptimized
             />
           </div>
         </motion.div>
