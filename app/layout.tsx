@@ -85,6 +85,9 @@ export default function RootLayout({
       className={`${playfair.variable} ${dmSans.variable} h-full antialiased`}
     >
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
